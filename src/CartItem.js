@@ -7,11 +7,10 @@ const CartItem = ({ id, img, title, price, amount}) => {
   const {removeItem, increaseAmount, decreaseAmount} = useGlobalContext()
   return (
     <article className='cart-item'>
-      <img src={img} alt={title} />
+      <img src={img} alt={title} className='item-img'/>
       <div>
-        <h4>{title}</h4>
+        <h4 className='item-title'>{title}</h4>
         <h4 className='item-price'>${price}</h4>
-        {/* remove button */}
         <button
           className='remove-btn'
           onClick={() => removeItem(id)}
@@ -20,13 +19,10 @@ const CartItem = ({ id, img, title, price, amount}) => {
         </button>
       </div>
       <div>
-        {/* increase amount */}
         <button className='amount-btn' onClick={() => increaseAmount(id)}>
           <FontAwesomeIcon icon={faAngleUp} className='amount-arrow'/> 
         </button>
-        {/* amount */}
         <p className='amount'>{amount}</p>
-        {/* decrease amount */}
         <button className='amount-btn' onClick={() => decreaseAmount(id)}>
           <FontAwesomeIcon icon={faAngleDown} className='amount-arrow'/> 
         </button>

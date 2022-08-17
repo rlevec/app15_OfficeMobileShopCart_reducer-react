@@ -7,9 +7,8 @@ const CartContainer = () => {
   if (cart.length === 0) {
     return (
       <section className='cart'>
-        {/* cart header */}
         <header>
-          <h2>your bag</h2>
+          <h2 className='bag-header'>cart</h2>
           <h4 className='empty-cart'>is currently empty</h4>
         </header>
       </section>
@@ -17,22 +16,19 @@ const CartContainer = () => {
   }
   return (
     <section className='cart'>
-      {/* cart header */}
       <header>
-        <h2>your bag</h2>
+        <h2 className='bag-header'>cart</h2>
       </header>
-      {/* cart items */}
       <div>
         {cart.map((item) => {
           return <CartItem key={item.id} {...item} />
         })}
       </div>
-      {/* cart footer */}
       <footer>
         <hr />
         <div className='cart-total'>
-          <h4>
-            total <span>€{total}</span>
+          <h4 className='total-header'>
+            total <span className='total-span'>€{total}</span>
           </h4>
         </div>
         <button
