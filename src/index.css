@@ -324,4 +324,5 @@ hr {
 
 .cart-icon:hover {
   animation: pulse 1.5s;
+  cursor: pointer;
 }
