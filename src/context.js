@@ -33,6 +33,10 @@ const AppProvider = ({ children }) => {
     dispatch({type: 'GET_TOTAL_AMOUNTS'})
   }, [state.cart])
 
+  const toggleAmount = (id, type) => {
+    dispatch({type: 'TOGGLE_AMOUNT', payload: {id, type}})
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -40,7 +44,8 @@ const AppProvider = ({ children }) => {
         clearCart,
         removeItem,
         increaseAmount,
-        decreaseAmount
+        decreaseAmount,
+        toggleAmount
       }}
     >
       {children}
